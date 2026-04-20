@@ -5,9 +5,9 @@ RUN dnf -y install unzip glibc-langpack-en
 ENV LC_ALL=en_US.utf8
 ENV LANG=en_US.utf8
 
-ENV TF_PROVIDER_AWS_VERSIONS="3.76.0 3.76.1 4.67.0 5.39.1"
-ENV TF_PROVIDER_RANDOM_VERSIONS="3.4.3"
-ENV TF_PROVIDER_TIME_VERSIONS="0.9.1"
+ENV TF_PROVIDER_AWS_VERSIONS="5.39.1"
+ENV TF_PROVIDER_RANDOM_VERSIONS="3.8.1"
+ENV TF_PROVIDER_TIME_VERSIONS="0.13.1"
 ENV TF_PROVIDER_CLOUDINIT_VERSIONS="2.3.3"
 ENV TF_VERSION=1.6.6
 ENV HELM_VERSION=3.19.2
@@ -78,7 +78,7 @@ COPY --from=ghcr.io/slok/sloth:v0.12.0@sha256:966590f31d9cb757034d20505579fc170e
 
 FROM registry.access.redhat.com/ubi9/python-312-minimal@sha256:30b4dc48a9f9661d9fc15795f2a144fdd1e8d2b59f4e5530eb51571f853270f3 AS prod
 
-LABEL konflux.additional-tags=1.5.1
+LABEL konflux.additional-tags=1.5.2
 
 ENV TF_PLUGIN_LOCAL_DIR=/usr/local/share/terraform/
 ENV TF_PLUGIN_CACHE_DIR=/.terraform.d/plugin-cache/
